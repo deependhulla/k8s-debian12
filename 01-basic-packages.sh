@@ -14,6 +14,6 @@ DEBIAN_FRONTEND=noninteractive
 apt -y  install vim chrony openssh-server screen net-tools git mc postfix sendemail  \
 	sudo wget curl ethtool iptraf-ng traceroute telnet rsyslog software-properties-common \
 	dirmngr parted gdisk apt-transport-https lsb-release ca-certificates iputils-ping \
-	bridge-utils iptables conntrack 
+	bridge-utils iptables conntrack containernetworking-plugin 
  
 

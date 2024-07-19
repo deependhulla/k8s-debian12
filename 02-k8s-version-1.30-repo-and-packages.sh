@@ -8,7 +8,7 @@ echo 'deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.
 chmod 644 /etc/apt/sources.list.d/kubernetes.list   
 
 apt-get update
-apt-get install -y kubectl cri-tools kubeadm
+apt-get install -y kubectl cri-tools kubeadm kubernetes-cni
 
 ## check and print version
 kubectl version --client
