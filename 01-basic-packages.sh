@@ -11,9 +11,13 @@ echo "iptables-persistent iptables-persistent/autosave_v4 boolean true" | debcon
 echo "iptables-persistent iptables-persistent/autosave_v6 boolean true" | debconf-set-selections
 DEBIAN_FRONTEND=noninteractive
 
-apt -y  install vim chrony openssh-server screen net-tools git mc postfix sendemail  \
+apt -y  install vim chrony openssh-server screen net-tools git mc postfix sendemail tmux  \
 	sudo wget curl ethtool iptraf-ng traceroute telnet rsyslog software-properties-common \
 	dirmngr parted gdisk apt-transport-https lsb-release ca-certificates iputils-ping \
-	bridge-utils iptables conntrack containernetworking-plugin 
+	bridge-utils iptables conntrack 
  
+
+swapoff -a
+modprobe br_netfilter
+sysctl -w net.ipv4.ip_forward=1
 

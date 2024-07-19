@@ -56,6 +56,11 @@ printf '%s\n' '#!/bin/bash'  | tee -a /etc/rc.local 1>/dev/null
 echo "sysctl -w net.ipv6.conf.all.disable_ipv6=1" >>/etc/rc.local
 echo "sysctl -w net.ipv6.conf.default.disable_ipv6=1" >> /etc/rc.local
 echo "sysctl vm.swappiness=0" >> /etc/rc.local
+echo "swapoff -a" >> /etc/rc.local
+echo "modprobe overlay" >> /etc/rc.local
+echo "modprobe br_netfilter" >> /etc/rc.local
+echo "sysctl -w net.ipv4.ip_forward=1" >> /etc/rc.local
+
 echo "exit 0" >> /etc/rc.local
 chmod 755 /etc/rc.local
 ## need like autoexe bat on startup
@@ -92,6 +97,10 @@ echo "syntax on" >> ~/.vimrc
 ##  for  other new users
 echo "\"set mouse=a/g" >  /etc/skel/.vimrc
 echo "syntax on" >> /etc/skel/.vimrc
+
+## for Routing
+sed -i "s/#net.ipv4.ip_forward=1/net.ipv4.ip_forward=1/g" /etc/sysctl.conf 
+
 
 ##Comment this if you do not want root login via ssh activated using port 7722
 sed -i "s/#PermitRootLogin prohibit-password/PermitRootLogin yes/g" /etc/ssh/sshd_config

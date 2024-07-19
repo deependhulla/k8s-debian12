@@ -1,0 +1,118 @@
+
+==> Audit <==
+|------------|--------------------------------|----------|------|---------|---------------------|---------------------|
+|  Command   |              Args              | Profile  | User | Version |     Start Time      |      End Time       |
+|------------|--------------------------------|----------|------|---------|---------------------|---------------------|
+| start      |                                | minikube | root | v1.33.1 | 19 Jul 24 18:28 IST |                     |
+| start      | --driver=none                  | minikube | root | v1.33.1 | 19 Jul 24 18:28 IST |                     |
+| start      | --driver=                      | minikube | root | v1.33.1 | 19 Jul 24 18:28 IST |                     |
+| delete     |                                | minikube | root | v1.33.1 | 19 Jul 24 18:29 IST | 19 Jul 24 18:29 IST |
+| start      | --driver=docker                | minikube | root | v1.33.1 | 19 Jul 24 18:30 IST |                     |
+|            | --container-runtime=crio       |          |      |         |                     |                     |
+| podman-env |                                | minikube | root | v1.33.1 | 19 Jul 24 18:30 IST |                     |
+| delete     |                                | minikube | root | v1.33.1 | 19 Jul 24 18:30 IST | 19 Jul 24 18:30 IST |
+| podman-env |                                | minikube | root | v1.33.1 | 19 Jul 24 18:30 IST |                     |
+| start      | --driver=podman                | minikube | root | v1.33.1 | 19 Jul 24 18:31 IST |                     |
+|            | --container-runtime=cri-o      |          |      |         |                     |                     |
+| start      | --driver=none                  | minikube | root | v1.33.1 | 19 Jul 24 18:31 IST |                     |
+|            | --container-runtime=cri-o      |          |      |         |                     |                     |
+|------------|--------------------------------|----------|------|---------|---------------------|---------------------|
+
+
+==> Last Start <==
+Log file created at: 2024/07/19 18:31:58
+Running on machine: debiandvd
+Binary: Built with gc go1.22.1 for linux/amd64
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0719 18:31:58.067006    8396 out.go:291] Setting OutFile to fd 1 ...
+I0719 18:31:58.067130    8396 out.go:343] isatty.IsTerminal(1) = true
+I0719 18:31:58.067134    8396 out.go:304] Setting ErrFile to fd 2...
+I0719 18:31:58.067137    8396 out.go:343] isatty.IsTerminal(2) = true
+I0719 18:31:58.067386    8396 root.go:338] Updating PATH: /root/.minikube/bin
+I0719 18:31:58.067992    8396 out.go:298] Setting JSON to false
+I0719 18:31:58.084635    8396 start.go:129] hostinfo: {"hostname":"debiandvd","uptime":2738,"bootTime":1721391380,"procs":219,"os":"linux","platform":"debian","platformFamily":"debian","platformVersion":"12.6","kernelVersion":"6.1.0-23-amd64","kernelArch":"x86_64","virtualizationSystem":"","virtualizationRole":"","hostId":"c4074d56-fe49-f3c3-b7d9-bb50d4606c31"}
+I0719 18:31:58.084702    8396 start.go:139] virtualization:  
+I0719 18:31:58.086369    8396 out.go:177] 😄  minikube v1.33.1 on Debian 12.6
+W0719 18:31:58.087672    8396 preload.go:294] Failed to list preload files: open /root/.minikube/cache/preloaded-tarball: no such file or directory
+I0719 18:31:58.087819    8396 notify.go:220] Checking for updates...
+I0719 18:31:58.087950    8396 driver.go:392] Setting default libvirt URI to qemu:///system
+I0719 18:31:58.088554    8396 out.go:177] ✨  Using the none driver based on user configuration
+I0719 18:31:58.090633    8396 start.go:297] selected driver: none
+I0719 18:31:58.090641    8396 start.go:901] validating driver "none" against <nil>
+I0719 18:31:58.090653    8396 start.go:912] status for none: {Installed:true Healthy:true Running:false NeedsImprovement:false Error:<nil> Reason: Fix: Doc: Version:}
+W0719 18:31:58.090899    8396 out.go:239] ❗  Using the 'crio' runtime with the 'none' driver is an untested configuration!
+I0719 18:31:58.092363    8396 start_flags.go:310] no existing cluster config was found, will generate one from the flags 
+I0719 18:31:58.092678    8396 start_flags.go:393] Using suggested 2200MB memory alloc based on sys=3880MB, container=0MB
+I0719 18:31:58.092788    8396 start_flags.go:929] Wait components to verify : map[apiserver:true system_pods:true]
+I0719 18:31:58.092860    8396 cni.go:84] Creating CNI manager for ""
+I0719 18:31:58.092866    8396 cni.go:146] "none" driver + "crio" runtime found, recommending bridge
+I0719 18:31:58.092871    8396 start_flags.go:319] Found "bridge CNI" CNI - setting NetworkPlugin=cni
+I0719 18:31:58.092910    8396 start.go:340] cluster config:
+{Name:minikube KeepContext:false EmbedCerts:false MinikubeISO: KicBaseImage:gcr.io/k8s-minikube/kicbase:v0.0.44@sha256:eb04641328b06c5c4a14f4348470e1046bbcf9c2cbc551486e343d3a49db557e Memory:2200 CPUs:2 DiskSize:20000 Driver:none HyperkitVpnKitSock: HyperkitVSockPorts:[] DockerEnv:[] ContainerVolumeMounts:[] InsecureRegistry:[] RegistryMirror:[] HostOnlyCIDR:192.168.59.1/24 HypervVirtualSwitch: HypervUseExternalSwitch:false HypervExternalAdapter: KVMNetwork:default KVMQemuURI:qemu:///system KVMGPU:false KVMHidden:false KVMNUMACount:1 APIServerPort:8443 DockerOpt:[] DisableDriverMounts:false NFSShare:[] NFSSharesRoot:/nfsshares UUID: NoVTXCheck:false DNSProxy:false HostDNSResolver:true HostOnlyNicType:virtio NatNicType:virtio SSHIPAddress: SSHUser:root SSHKey: SSHPort:22 KubernetesConfig:{KubernetesVersion:v1.30.0 ClusterName:minikube Namespace:default APIServerHAVIP: APIServerName:minikubeCA APIServerNames:[] APIServerIPs:[] DNSDomain:cluster.local ContainerRuntime:crio CRISocket: NetworkPlugin:cni FeatureGates: ServiceCIDR:10.96.0.0/12 ImageRepository: LoadBalancerStartIP: LoadBalancerEndIP: CustomIngressCert: RegistryAliases: ExtraOptions:[] ShouldLoadCachedImages:false EnableDefaultCNI:false CNI:} Nodes:[{Name: IP: Port:8443 KubernetesVersion:v1.30.0 ContainerRuntime:crio ControlPlane:true Worker:true}] Addons:map[] CustomAddonImages:map[] CustomAddonRegistries:map[] VerifyComponents:map[apiserver:true system_pods:true] StartHostTimeout:6m0s ScheduledStop:<nil> ExposedPorts:[] ListenAddress: Network: Subnet: MultiNodeRequested:false ExtraDisks:0 CertExpiration:26280h0m0s Mount:false MountString:/root:/minikube-host Mount9PVersion:9p2000.L MountGID:docker MountIP: MountMSize:262144 MountOptions:[] MountPort:0 MountType:9p MountUID:docker BinaryMirror: DisableOptimizations:false DisableMetrics:false CustomQemuFirmwarePath: SocketVMnetClientPath: SocketVMnetPath: StaticIP: SSHAuthSock: SSHAgentPID:0 GPUs: AutoPauseInterval:1m0s}
+I0719 18:31:58.093572    8396 out.go:177] 👍  Starting "minikube" primary control-plane node in "minikube" cluster
+I0719 18:31:58.095142    8396 profile.go:143] Saving config to /root/.minikube/profiles/minikube/config.json ...
+I0719 18:31:58.095179    8396 lock.go:35] WriteFile acquiring /root/.minikube/profiles/minikube/config.json: {Name:mk270d1b5db5965f2dc9e9e25770a63417031943 Clock:{} Delay:500ms Timeout:1m0s Cancel:<nil>}
+I0719 18:31:58.095457    8396 start.go:360] acquireMachinesLock for minikube: {Name:mkc8ab01ad3ea83211c505c81a7ee49a8e3ecb89 Clock:{} Delay:500ms Timeout:13m0s Cancel:<nil>}
+I0719 18:31:58.095533    8396 start.go:364] duration metric: took 66.39µs to acquireMachinesLock for "minikube"
+I0719 18:31:58.095575    8396 start.go:93] Provisioning new machine with config: &{Name:minikube KeepContext:false EmbedCerts:false MinikubeISO: KicBaseImage:gcr.io/k8s-minikube/kicbase:v0.0.44@sha256:eb04641328b06c5c4a14f4348470e1046bbcf9c2cbc551486e343d3a49db557e Memory:2200 CPUs:2 DiskSize:20000 Driver:none HyperkitVpnKitSock: HyperkitVSockPorts:[] DockerEnv:[] ContainerVolumeMounts:[] InsecureRegistry:[] RegistryMirror:[] HostOnlyCIDR:192.168.59.1/24 HypervVirtualSwitch: HypervUseExternalSwitch:false HypervExternalAdapter: KVMNetwork:default KVMQemuURI:qemu:///system KVMGPU:false KVMHidden:false KVMNUMACount:1 APIServerPort:8443 DockerOpt:[] DisableDriverMounts:false NFSShare:[] NFSSharesRoot:/nfsshares UUID: NoVTXCheck:false DNSProxy:false HostDNSResolver:true HostOnlyNicType:virtio NatNicType:virtio SSHIPAddress: SSHUser:root SSHKey: SSHPort:22 KubernetesConfig:{KubernetesVersion:v1.30.0 ClusterName:minikube Namespace:default APIServerHAVIP: APIServerName:minikubeCA APIServerNames:[] APIServerIPs:[] DNSDomain:cluster.local ContainerRuntime:crio CRISocket: NetworkPlugin:cni FeatureGates: ServiceCIDR:10.96.0.0/12 ImageRepository: LoadBalancerStartIP: LoadBalancerEndIP: CustomIngressCert: RegistryAliases: ExtraOptions:[] ShouldLoadCachedImages:false EnableDefaultCNI:false CNI:} Nodes:[{Name: IP: Port:8443 KubernetesVersion:v1.30.0 ContainerRuntime:crio ControlPlane:true Worker:true}] Addons:map[] CustomAddonImages:map[] CustomAddonRegistries:map[] VerifyComponents:map[apiserver:true system_pods:true] StartHostTimeout:6m0s ScheduledStop:<nil> ExposedPorts:[] ListenAddress: Network: Subnet: MultiNodeRequested:false ExtraDisks:0 CertExpiration:26280h0m0s Mount:false MountString:/root:/minikube-host Mount9PVersion:9p2000.L MountGID:docker MountIP: MountMSize:262144 MountOptions:[] MountPort:0 MountType:9p MountUID:docker BinaryMirror: DisableOptimizations:false DisableMetrics:false CustomQemuFirmwarePath: SocketVMnetClientPath: SocketVMnetPath: StaticIP: SSHAuthSock: SSHAgentPID:0 GPUs: AutoPauseInterval:1m0s} &{Name: IP: Port:8443 KubernetesVersion:v1.30.0 ContainerRuntime:crio ControlPlane:true Worker:true}
+I0719 18:31:58.095619    8396 start.go:125] createHost starting for "" (driver="none")
+I0719 18:31:58.096468    8396 out.go:177] 🤹  Running on localhost (CPUs=4, Memory=3880MB, Disk=18519MB) ...
+I0719 18:31:58.097429    8396 exec_runner.go:51] Run: systemctl --version
+I0719 18:31:58.104687    8396 start.go:159] libmachine.API.Create for "minikube" (driver="none")
+I0719 18:31:58.104747    8396 client.go:168] LocalClient.Create starting
+I0719 18:31:58.104834    8396 main.go:141] libmachine: Reading certificate data from /root/.minikube/certs/ca.pem
+I0719 18:31:58.104866    8396 main.go:141] libmachine: Decoding PEM data...
+I0719 18:31:58.104877    8396 main.go:141] libmachine: Parsing certificate...
+I0719 18:31:58.105147    8396 main.go:141] libmachine: Reading certificate data from /root/.minikube/certs/cert.pem
+I0719 18:31:58.105164    8396 main.go:141] libmachine: Decoding PEM data...
+I0719 18:31:58.105172    8396 main.go:141] libmachine: Parsing certificate...
+I0719 18:31:58.105229    8396 client.go:171] duration metric: took 455.609µs to LocalClient.Create
+I0719 18:32:00.106664    8396 start.go:128] duration metric: took 2.010992743s to createHost
+I0719 18:32:00.106696    8396 start.go:83] releasing machines lock for "minikube", held for 2.01115462s
+W0719 18:32:00.106749    8396 start.go:713] error starting host: creating host: create: precreate: exec: "docker": executable file not found in $PATH
+I0719 18:32:00.107156    8396 cli_runner.go:164] Run: docker container inspect minikube --format={{.State.Status}}
+I0719 18:32:00.107223    8396 delete.go:46] couldn't inspect container "minikube" before deleting: unknown state "minikube": docker container inspect minikube --format={{.State.Status}}: exec: "docker": executable file not found in $PATH
+stdout:
+
+stderr:
+I0719 18:32:00.107422    8396 cli_runner.go:164] Run: sudo -n podman container inspect minikube --format={{.State.Status}}
+W0719 18:32:00.120850    8396 cli_runner.go:211] sudo -n podman container inspect minikube --format={{.State.Status}} returned with exit code 1
+I0719 18:32:00.121114    8396 delete.go:46] couldn't inspect container "minikube" before deleting: unknown state "minikube": sudo -n podman container inspect minikube --format={{.State.Status}}: exit status 1
+stdout:
+
+stderr:
+sudo: podman: command not found
+W0719 18:32:00.121166    8396 start.go:718] delete host: Docker machine "minikube" does not exist. Use "docker-machine ls" to list machines. Use "docker-machine create" to add a new one.
+W0719 18:32:00.121306    8396 out.go:239] 🤦  StartHost failed, but will try again: creating host: create: precreate: exec: "docker": executable file not found in $PATH
+I0719 18:32:00.121429    8396 start.go:728] Will try again in 5 seconds ...
+I0719 18:32:05.122944    8396 start.go:360] acquireMachinesLock for minikube: {Name:mkc8ab01ad3ea83211c505c81a7ee49a8e3ecb89 Clock:{} Delay:500ms Timeout:13m0s Cancel:<nil>}
+I0719 18:32:05.123581    8396 start.go:364] duration metric: took 574.93µs to acquireMachinesLock for "minikube"
+I0719 18:32:05.123645    8396 start.go:93] Provisioning new machine with config: &{Name:minikube KeepContext:false EmbedCerts:false MinikubeISO: KicBaseImage:gcr.io/k8s-minikube/kicbase:v0.0.44@sha256:eb04641328b06c5c4a14f4348470e1046bbcf9c2cbc551486e343d3a49db557e Memory:2200 CPUs:2 DiskSize:20000 Driver:none HyperkitVpnKitSock: HyperkitVSockPorts:[] DockerEnv:[] ContainerVolumeMounts:[] InsecureRegistry:[] RegistryMirror:[] HostOnlyCIDR:192.168.59.1/24 HypervVirtualSwitch: HypervUseExternalSwitch:false HypervExternalAdapter: KVMNetwork:default KVMQemuURI:qemu:///system KVMGPU:false KVMHidden:false KVMNUMACount:1 APIServerPort:8443 DockerOpt:[] DisableDriverMounts:false NFSShare:[] NFSSharesRoot:/nfsshares UUID: NoVTXCheck:false DNSProxy:false HostDNSResolver:true HostOnlyNicType:virtio NatNicType:virtio SSHIPAddress: SSHUser:root SSHKey: SSHPort:22 KubernetesConfig:{KubernetesVersion:v1.30.0 ClusterName:minikube Namespace:default APIServerHAVIP: APIServerName:minikubeCA APIServerNames:[] APIServerIPs:[] DNSDomain:cluster.local ContainerRuntime:crio CRISocket: NetworkPlugin:cni FeatureGates: ServiceCIDR:10.96.0.0/12 ImageRepository: LoadBalancerStartIP: LoadBalancerEndIP: CustomIngressCert: RegistryAliases: ExtraOptions:[] ShouldLoadCachedImages:false EnableDefaultCNI:false CNI:} Nodes:[{Name: IP: Port:8443 KubernetesVersion:v1.30.0 ContainerRuntime:crio ControlPlane:true Worker:true}] Addons:map[] CustomAddonImages:map[] CustomAddonRegistries:map[] VerifyComponents:map[apiserver:true system_pods:true] StartHostTimeout:6m0s ScheduledStop:<nil> ExposedPorts:[] ListenAddress: Network: Subnet: MultiNodeRequested:false ExtraDisks:0 CertExpiration:26280h0m0s Mount:false MountString:/root:/minikube-host Mount9PVersion:9p2000.L MountGID:docker MountIP: MountMSize:262144 MountOptions:[] MountPort:0 MountType:9p MountUID:docker BinaryMirror: DisableOptimizations:false DisableMetrics:false CustomQemuFirmwarePath: SocketVMnetClientPath: SocketVMnetPath: StaticIP: SSHAuthSock: SSHAgentPID:0 GPUs: AutoPauseInterval:1m0s} &{Name: IP: Port:8443 KubernetesVersion:v1.30.0 ContainerRuntime:crio ControlPlane:true Worker:true}
+I0719 18:32:05.124574    8396 start.go:125] createHost starting for "" (driver="none")
+I0719 18:32:05.130325    8396 out.go:177] 🤹  Running on localhost (CPUs=4, Memory=3880MB, Disk=18519MB) ...
+I0719 18:32:05.133163    8396 start.go:159] libmachine.API.Create for "minikube" (driver="none")
+I0719 18:32:05.133244    8396 client.go:168] LocalClient.Create starting
+I0719 18:32:05.133367    8396 main.go:141] libmachine: Reading certificate data from /root/.minikube/certs/ca.pem
+I0719 18:32:05.133499    8396 main.go:141] libmachine: Decoding PEM data...
+I0719 18:32:05.133547    8396 main.go:141] libmachine: Parsing certificate...
+I0719 18:32:05.133628    8396 main.go:141] libmachine: Reading certificate data from /root/.minikube/certs/cert.pem
+I0719 18:32:05.133662    8396 main.go:141] libmachine: Decoding PEM data...
+I0719 18:32:05.133689    8396 main.go:141] libmachine: Parsing certificate...
+I0719 18:32:05.133769    8396 client.go:171] duration metric: took 516.259µs to LocalClient.Create
+I0719 18:32:07.135003    8396 start.go:128] duration metric: took 2.01011986s to createHost
+I0719 18:32:07.135032    8396 start.go:83] releasing machines lock for "minikube", held for 2.011421419s
+W0719 18:32:07.135258    8396 out.go:239] 😿  Failed to start none bare metal machine. Running "minikube delete" may fix it: creating host: create: precreate: exec: "docker": executable file not found in $PATH
+I0719 18:32:07.138011    8396 out.go:177] 
+W0719 18:32:07.140164    8396 out.go:239] ❌  Exiting due to GUEST_PROVISION: error provisioning guest: Failed to start host: creating host: create: precreate: exec: "docker": executable file not found in $PATH
+W0719 18:32:07.140736    8396 out.go:239] 
+W0719 18:32:07.143696    8396 out.go:239] [31m╭───────────────────────────────────────────────────────────────────────────────────────────╮[0m
+[31m│[0m                                                                                           [31m│[0m
+[31m│[0m    😿  If the above advice does not help, please let us know:                             [31m│[0m
+[31m│[0m    👉  https://github.com/kubernetes/minikube/issues/new/choose                           [31m│[0m
+[31m│[0m                                                                                           [31m│[0m
+[31m│[0m    Please run `minikube logs --file=logs.txt` and attach logs.txt to the GitHub issue.    [31m│[0m
+[31m│[0m                                                                                           [31m│[0m
+[31m╰───────────────────────────────────────────────────────────────────────────────────────────╯[0m
+I0719 18:32:07.146878    8396 out.go:177] 
+
+

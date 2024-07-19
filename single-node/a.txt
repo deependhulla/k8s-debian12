@@ -1,0 +1,34 @@
+root@debiandvd:/opt/k8s-debian12/single-node# minikube start --driver=none
+😄  minikube v1.33.1 on Debian 12.6
+✨  Using the none driver based on user configuration
+👍  Starting "minikube" primary control-plane node in "minikube" cluster
+🤹  Running on localhost (CPUs=4, Memory=3880MB, Disk=18519MB) ...
+ℹ️  OS release is Debian GNU/Linux 12 (bookworm)
+    > kubeadm.sha256:  64 B / 64 B [-------------------------] 100.00% ? p/s 0s
+    > kubelet.sha256:  64 B / 64 B [-------------------------] 100.00% ? p/s 0s
+    > kubeadm:  47.92 MiB / 47.92 MiB [--------------] 100.00% 1.64 MiB p/s 29s
+    > kubelet:  95.46 MiB / 95.46 MiB [------------] 100.00% 1.07 MiB p/s 1m29s
+
+    ▪ Generating certificates and keys ...
+    ▪ Booting up control plane ...
+    ▪ Configuring RBAC rules ...
+🔗  Configuring bridge CNI (Container Networking Interface) ...
+🤹  Configuring local host environment ...
+
+❗  The 'none' driver is designed for experts who need to integrate with an existing VM
+💡  Most users should use the newer 'docker' driver instead, which does not require root!
+📘  For more information, see: https://minikube.sigs.k8s.io/docs/reference/drivers/none/
+
+❗  kubectl and minikube configuration will be stored in /root
+❗  To use kubectl or minikube commands as your own user, you may need to relocate them. For example, to overwrite your own settings, run:
+
+    ▪ sudo mv /root/.kube /root/.minikube $HOME
+    ▪ sudo chown -R $USER $HOME/.kube $HOME/.minikube
+
+💡  This can also be done automatically by setting the env var CHANGE_MINIKUBE_NONE_USER=true
+🔎  Verifying Kubernetes components...
+    ▪ Using image gcr.io/k8s-minikube/storage-provisioner:v5
+🌟  Enabled addons: default-storageclass, storage-provisioner
+🏄  Done! kubectl is now configured to use "minikube" cluster and "default" namespace by default
+root@debiandvd:/opt/k8s-debian12/single-node# 
+
