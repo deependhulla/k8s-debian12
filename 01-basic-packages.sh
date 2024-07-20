@@ -16,8 +16,15 @@ apt -y  install vim chrony openssh-server screen net-tools git mc postfix sendem
 	dirmngr parted gdisk apt-transport-https lsb-release ca-certificates iputils-ping \
 	bridge-utils iptables jq conntrack 
  
-
+sed -i '/swap/s/^/#/' /etc/fstab
 swapoff -a
 modprobe br_netfilter
 sysctl -w net.ipv4.ip_forward=1
 
+echo ""
+echo ""
+echo "---------------------------------------------------------"
+echo "Reboot to load kernel update if any and swapoff for k8s"
+echo "---------------------------------------------------------"
+echo ""
+echo ""
