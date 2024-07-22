@@ -3,6 +3,7 @@
 CRIO_VERSION=v1.30
 KUBERNETES_VERSION=v1.30
 
+export KUBECONFIG=/etc/kubernetes/admin.conf
 
 curl -fsSL https://pkgs.k8s.io/addons:/cri-o:/stable:/$CRIO_VERSION/deb/Release.key |
     gpg --dearmor -o /etc/apt/keyrings/cri-o-apt-keyring.gpg
@@ -19,7 +20,7 @@ echo "deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.
 
 apt-get update
 
-apt-get install -y cri-o kubelet kubeadm kubectl
+apt-get install -y cri-o kubelet kubeadm kubectl rsyslog-kubernetes
 
 ## check and print version
 kubectl version --client

@@ -56,6 +56,7 @@ printf '%s\n' '#!/bin/bash'  | tee -a /etc/rc.local 1>/dev/null
 echo "sysctl -w net.ipv6.conf.all.disable_ipv6=1" >>/etc/rc.local
 echo "sysctl -w net.ipv6.conf.default.disable_ipv6=1" >> /etc/rc.local
 echo "sysctl vm.swappiness=0" >> /etc/rc.local
+echo "export KUBECONFIG=/etc/kubernetes/admin.conf" >> /etc/rc.local
 echo "swapoff -a" >> /etc/rc.local
 echo "modprobe overlay" >> /etc/rc.local
 echo "modprobe br_netfilter" >> /etc/rc.local

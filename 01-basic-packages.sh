@@ -4,6 +4,8 @@
 apt update
 apt -y  upgrade
 
+## install basic postfix, chrony time-server tool instead of default and other useful tools
+
 CFG_HOSTNAME_FQDN=`hostname -f`
 echo "postfix postfix/main_mailer_type select Internet Site" | debconf-set-selections
 echo "postfix postfix/mailname string $CFG_HOSTNAME_FQDN" | debconf-set-selections
