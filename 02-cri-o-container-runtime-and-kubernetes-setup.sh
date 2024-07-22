@@ -49,3 +49,12 @@ EOF
 
 sysctl --system
 
+## download calico ctl before config
+cd /tmp/
+curl -L https://github.com/projectcalico/calico/releases/download/v3.28.0/calicoctl-linux-amd64 -o kubectl-calico
+chmod +x kubectl-calico
+kubectl calico -h
+
+cd -
+
+
