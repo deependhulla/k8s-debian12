@@ -1,7 +1,8 @@
 #!/bin/bash
 
 podnetwork="10.11.0.0/16"
-
+servicenetwork="192.168.107.0/24"
+masterhost="192.168.107.131"
 
 sed -i "s#10.85.0.0/16#$podnetwork#g" /etc/cni//net.d/11-crio-ipv4-bridge.conflist 
 
@@ -13,7 +14,7 @@ chsh -s /bin/bash ks8adminuser
 # These address ranges are examples
 
 
-kubeadm init --pod-network-cidr $podnetwork
+kubeadm init --pod-network-cidr=$podnetwork --service-cidr=$servicenetwork --control-plane-endpoint=$masterhost
 
 #sleep for init to finish
 sleep 10
