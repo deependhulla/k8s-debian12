@@ -2,6 +2,12 @@
 #
 
 apt update
+## remove its create problem.
+apt-get -y purge network-manager
+systemctl stop NetworkManager.service
+systemctl disable NetworkManager.service
+systemctl mask NetworkManager.service
+
 apt -y  upgrade
 
 ## install basic postfix, chrony time-server tool instead of default and other useful tools
